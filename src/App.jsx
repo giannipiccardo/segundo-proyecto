@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
 import PokemonCard from "./Components/PokemonCard"
 import './App.css'
+import { useParams } from 'react-router-dom';
 
-function App() {
+function App(route) {
   const [pokemons, setPokemons] = useState([]);
+  const { pokemonId } = useParams()
+  const pokemon = route.find((est) => est.url == pokemonId)
+  console.log(route)
 
   useEffect(() => {
     const getPokemons = async () => {
@@ -15,7 +19,7 @@ function App() {
 
     getPokemons();
   }, []);
-  console.log(pokemons);
+  console.log("pokemons", pokemons);
 
   return (
     <div>
@@ -23,5 +27,6 @@ function App() {
     </div>
   );
 }
+import { useParams } from 'react-router-dom';
 
 export default App;
