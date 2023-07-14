@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import PokemonCard from "./Components/PokemonCard"
 import './App.css'
-import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function App(route) {
+function App() {
   const [pokemons, setPokemons] = useState([]);
-  const { pokemonId } = useParams()
-  const pokemon = route.find((est) => est.url == pokemonId)
-  console.log(route)
+
+
+
 
   useEffect(() => {
     const getPokemons = async () => {
@@ -23,10 +23,10 @@ function App(route) {
 
   return (
     <div>
-      {pokemons.length ? <PokemonCard url={pokemons[0].url}></PokemonCard> : "Cargando contenido..."}
+      {pokemons.length ? pokemons.map(({name, url})=><Link key={url} to={`/pokemon/${url.split('/').at(-2)}`}>{name}</Link>) : "Cargando contenido..."}
     </div>
   );
 }
-import { useParams } from 'react-router-dom';
+
 
 export default App;
