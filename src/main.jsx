@@ -11,10 +11,10 @@ import PokemonCard from './Components/PokemonCard.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App route={route} />,
+    element: <App  />,
   },
   {
-    path: "pokemon/:pokemonId",
+    path: "/pokemon/:pokemonId",
     element: <PokemonCard />,
   },
 ]);

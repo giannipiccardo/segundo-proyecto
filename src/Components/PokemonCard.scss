@@ -1,0 +1,157 @@
+* {
+  background-color: lightgreen;
+}
+
+.header-container {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+
+  button {
+    background-color: transparent;
+    border: none;
+  }
+
+  img {
+    height: 30px;
+    width: 30px;
+    color: white;
+  }
+
+  .poke-name {
+    font-weight: bold;
+  }
+}
+
+#poke-img {
+  width: 50%;
+  margin-left: 25%;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.info-container {
+  width: 96%;
+  background-color: white;
+  height: 70%;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p{
+    background-color: transparent;
+    margin: 0px 10px;
+  }
+  h2{
+    background-color: transparent;
+    color: lightgreen;
+
+  }
+
+  .poke-types {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    background-color: transparent;
+
+    span {
+      background-color: transparent;
+      margin: 0px 10px;
+    }
+  }
+  .about {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    width: 70%;
+
+    .borders{
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+    }
+
+    .description {
+      width: 30%;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: transparent;
+      justify-content: center;
+    }
+    .measure {
+      width: 50%;
+      background-color: transparent;
+    }
+    .imagen {
+      width: 10%;
+    }
+
+    .abilities {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      background-color: transparent;
+      margin-left: 10px;
+    }
+}
+    .stats-container{
+        display: flex;
+        background-color: transparent;
+        width: 100%;
+
+        .stats-names{
+            width: 15%;
+            color: lightgreen;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid grey;
+            background-color: transparent;
+        }
+
+        .stats-numbers{
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            background-color: transparent;
+            margin-left: 20px;
+
+            p{
+                width: 100%;
+                margin: 0;
+
+            }
+
+            .progress{
+                min-width: 85%;
+                background-color: lightgrey;
+                display: inline-block;
+                margin-left: 10px;
+                border-radius: 3px;
+            }
+        }
+
+
+
+        .stats-bars-progress{
+                background-color: lightgreen;
+                height: 10px;
+                transition: width 0.3s ease-in-out;
+                margin: 0;
+                border-radius: 3px;
+        }
+        
+    }
+
+
+}
+
+span {
+  background-color: transparent;
+}
+
+
