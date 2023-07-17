@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './index.css'
+import './index.scss'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -11,7 +11,7 @@ import PokemonCard from './Components/PokemonCard.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App  />,
+    element: <App />,
   },
   {
     path: "/pokemon/:pokemonId",
