@@ -40,6 +40,9 @@
     font-weight: bold;
     text-transform: capitalize;
   }
+  .poke-num{
+    margin-right: 5px;
+  }
 }
 
 #poke-img {
@@ -48,6 +51,23 @@
   position: relative;
   z-index: 1;
   background-color: transparent;
+}
+
+.button-next{
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  background-color: transparent;
+  border: none;
+
+}
+.button-back{
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  background-color: transparent;
+  border: none;
+  transform: scaleX(-1);
 }
 
 .info-container {
@@ -86,7 +106,7 @@
     display: flex;
     justify-content: center;
     background-color: transparent;
-    width: 70%;
+    width: 90%;
 
     .borders{
         border-left: 1px solid grey;
@@ -174,8 +194,22 @@
 
 span {
   background-color: transparent;
+
 }
 
+.pastilla{
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
+  margin: 3px;
+  text-transform: capitalize;
+}
+
+h2{
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 10px 0px;
+}
 
 
 

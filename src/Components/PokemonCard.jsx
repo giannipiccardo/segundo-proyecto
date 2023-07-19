@@ -4,6 +4,7 @@ import "./PokemonCard.scss";
 import arrowleft from "../img/arrow-left.svg";
 import weight from "../img/Weight.svg";
 import { useNavigate } from "react-router-dom";
+import frame from '../img/Frame.svg'
 
 import height from "../img/Height.svg";
 
@@ -35,11 +36,13 @@ function PokemonCard() {
   console.log(description);
   const navigate = useNavigate();
 
+  const next = parseInt(pokemonId) +1
+  const back = parseInt(pokemonId) -1
+  
   return (
     <div className={`global ${pokemon?.types[0]?.type?.name}`}>
       <div className="header-container">
         <button onClick={() => { navigate("/") }}>
-          {/* <button onClick={(e) => { e.preventDefault(); navigate("/") }}> */}
           < img src={arrowleft} alt="lala" />
         </button>
         {pokemon ? (
@@ -54,12 +57,13 @@ function PokemonCard() {
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`}
         alt=""
       />
-
+      <button className='button-next' onClick={() => { navigate(`/pokemon/${next}`); location.reload() }}><img src={frame} alt="" /></button>
+      { pokemon?.id != 1 && <button className='button-back' onClick={() => { navigate(`/pokemon/${back}`); location.reload() }}><img src={frame} alt="" /></button>}
       <div className="container">
         <div className="info-container">
           <div className="poke-types">
-            {pokemon?.types.map((t) => (
-              <span key={t.type.name}>{t?.type?.name} </span>
+            {pokemon?.types.map((t, index) => (
+              <div className={`pastilla ${pokemon?.types[index]?.type?.name}`}key={t.type.name}>{t?.type?.name} </div>
             ))}
           </div>
           <h2 className={`${pokemon?.types[0]?.type?.name}-color`}>About</h2>
