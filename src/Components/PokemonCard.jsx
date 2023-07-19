@@ -10,6 +10,7 @@ import height from "../img/Height.svg";
 function PokemonCard() {
   const { pokemonId } = useParams();
   const [pokemon, setPokemon] = useState();
+  const [description, setDescription] = useState();
 
   useEffect(() => {
     const getPokemon = async () => {
@@ -18,11 +19,20 @@ function PokemonCard() {
 
       setPokemon(data);
     };
+    const getDescription = async () => {
+      const resultado = await fetch (`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`);
+      const dato = await resultado.json();
+      
+      setDescription(dato)
+      
+    }
+
+    getDescription();
 
     getPokemon();
   }, []);
 
-  // console.log("pokemon", pokemon);
+  console.log(description);
   const navigate = useNavigate();
 
   return (
@@ -72,10 +82,8 @@ function PokemonCard() {
               <span>Moves</span>
             </div>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-            laudantium, iste unde vero{" "}
-          </p>
+          <p>{description?.flavor_text_entries[0]?.flavor_text}</p>
+
 
           <h2 className={`${pokemon?.types[0]?.type?.name}-color`}>Base Stats</h2>
 

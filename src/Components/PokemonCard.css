@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.global {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+}
+.header-container button {
+  background-color: transparent;
+  border: none;
+}
+.header-container img {
+  height: 30px;
+  width: 30px;
+  color: white;
+}
+.header-container .poke-name {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#poke-img {
+  width: 50%;
+  margin-left: 25%;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.info-container {
+  width: 96%;
+  background-color: white;
+  height: 70%;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info-container p {
+  margin: 0px 10px;
+}
+.info-container h2 {
+  background-color: transparent;
+}
+.info-container .poke-types {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+  background-color: transparent;
+}
+.info-container .poke-types span {
+  background-color: transparent;
+  margin: 0px 10px;
+}
+.info-container .about {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  width: 70%;
+}
+.info-container .about .borders {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+.info-container .about .description {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: transparent;
+  justify-content: center;
+}
+.info-container .about .measure {
+  width: 50%;
+  background-color: transparent;
+}
+.info-container .about .imagen {
+  width: 10%;
+}
+.info-container .about .abilities {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  background-color: transparent;
+  margin-left: 10px;
+}
+.info-container .stats-container {
+  display: flex;
+  background-color: transparent;
+  width: 100%;
+}
+.info-container .stats-container .stats-names {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid grey;
+  background-color: transparent;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.info-container .stats-container .stats-numbers {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  margin-left: 20px;
+}
+.info-container .stats-container .stats-numbers p {
+  width: 100%;
+  margin: 0;
+}
+.info-container .stats-container .stats-numbers .progress {
+  min-width: 85%;
+  background-color: lightgrey;
+  display: inline-block;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+.info-container .stats-container .stats-bars-progress {
+  height: 10px;
+  transition: width 0.3s ease-in-out;
+  margin: 0;
+  border-radius: 3px;
+}
+.info-container .stats-container .PRUEBA {
+  background-color: aquamarine;
+}
+
+span {
+  background-color: transparent;
+}/*# sourceMappingURL=PokemonCard.css.map */

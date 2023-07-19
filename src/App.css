@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@800&family=Space+Grotesk:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@400;800&family=Space+Grotesk:wght@400;500&display=swap");
+* {
+  font-family: "Poppins";
+  font-size: small;
+  font-weight: 100;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5%;
+}
+.home-container .home-title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.home-container .home-title .pokedex {
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.home-container .home-title .pokedex img {
+  width: 25px;
+  height: 25px;
+}
+.home-container .home-title .pokedex span {
+  font-size: 30px;
+  font-family: "Poppins";
+  font-weight: 900;
+  margin-left: 15px;
+}
+.home-container .home-input {
+  width: 100%;
+  margin-bottom: 25px;
+}
+.home-container .home-input input {
+  border: 1px lightgray solid;
+  width: 100%;
+  border-radius: 15px;
+}
+.home-container .home-grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.home-container .home-grid .home-pokemon-card {
+  width: 30%;
+}
+.home-container .home-grid .home-pokemon-card a:link, .home-container .home-grid .home-pokemon-card a:visited, .home-container .home-grid .home-pokemon-card a:active {
+  text-decoration: none;
+}/*# sourceMappingURL=App.css.map */
