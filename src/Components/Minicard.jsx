@@ -21,7 +21,7 @@ function Minicard({ name, url }) {
     
     switch (pokemon?.types[0]?.type?.name) {
         case 'rock':
-            color = '#B7B9D0'            
+            color = '#B69E31'            
             break;
         case 'water':
             color = '#6493EB'            
