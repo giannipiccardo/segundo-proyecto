@@ -84,7 +84,7 @@ function App() {
       <div className="home-title">
         <div className="pokedex">
           <img src={Logo} alt="Logo" />
-          <span>Pokédex v1</span>
+          <span>Pokédex rama2.2</span>
         </div>
         <button onClick={() => filtrar()} className="home-filters">
           <span>{boton}</span>
