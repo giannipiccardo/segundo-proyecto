@@ -59,22 +59,25 @@ function Minicard({ name, url }) {
         
         case 'dragon':
             color = '#7037FF'
+            break;
+
         case 'normal':
             color = '#AAA67F'
+            break;
         
         case 'fighting':
             color = '#C12239'
-            break
+            break;
         
         case 'ground':
             color = '#DEC168' 
-            break
+            break;
         case 'ghost':
             color = '#70559B' 
-            break
+            break;
         case 'steel':
             color = '#B7D9D0' 
-            break
+            break;
         
         default:
             break;
