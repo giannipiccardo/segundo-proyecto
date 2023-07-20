@@ -61,6 +61,21 @@ function Minicard({ name, url }) {
             color = '#7037FF'
         case 'normal':
             color = '#AAA67F'
+        
+        case 'fighting':
+            color = '#C12239'
+            break
+        
+        case 'ground':
+            color = '#DEC168' 
+            break
+        case 'ghost':
+            color = '#70559B' 
+            break
+        case 'steel':
+            color = '#B7D9D0' 
+            break
+        
         default:
             break;
     }
