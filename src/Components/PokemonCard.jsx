@@ -21,24 +21,24 @@ function PokemonCard() {
       setPokemon(data);
     };
     const getDescription = async () => {
-      const resultado = await fetch (`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`);
+      const resultado = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`);
       const dato = await resultado.json();
-      
+
       setDescription(dato)
-      
+
     }
 
     getDescription();
 
     getPokemon();
-  }, []);
+  }, [pokemonId]);
 
   console.log(description);
   const navigate = useNavigate();
 
-  const next = parseInt(pokemonId) +1
-  const back = parseInt(pokemonId) -1
-  
+  const next = parseInt(pokemonId) + 1
+  const back = parseInt(pokemonId) - 1
+
   return (
     <div className={`global ${pokemon?.types[0]?.type?.name}`}>
       <div className="header-container">
@@ -57,13 +57,13 @@ function PokemonCard() {
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`}
         alt=""
       />
-      <button className='button-next' onClick={() => { navigate(`/pokemon/${next}`); location.reload() }}><img src={frame} alt="" /></button>
-      { pokemon?.id != 1 && <button className='button-back' onClick={() => { navigate(`/pokemon/${back}`); location.reload() }}><img src={frame} alt="" /></button>}
+      <button className='button-next' onClick={() => { navigate(`/pokemon/${next}`) }}><img src={frame} alt="" /></button>
+      {pokemon?.id != 1 && <button className='button-back' onClick={() => { navigate(`/pokemon/${back}`) }}><img src={frame} alt="" /></button>}
       <div className="container">
         <div className="info-container">
           <div className="poke-types">
             {pokemon?.types.map((t, index) => (
-              <div className={`pastilla ${pokemon?.types[index]?.type?.name}`}key={t.type.name}>{t?.type?.name} </div>
+              <div className={`pastilla ${pokemon?.types[index]?.type?.name}`} key={t.type.name}>{t?.type?.name} </div>
             ))}
           </div>
           <h2 className={`${pokemon?.types[0]?.type?.name}-color`}>About</h2>
