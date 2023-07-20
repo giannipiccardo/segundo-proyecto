@@ -57,7 +57,7 @@ function App() {
       setPokemons([...filtro]);
     }
   }
-  useEffect(()=>{
+  useEffect(() => {
     setFiltro(pokemons);
   }, [pokemons])
 
@@ -67,7 +67,7 @@ function App() {
       return p.name.toLowerCase().includes(ev.target.value.toLowerCase());
     });
     setFiltro(resultado);
- 
+
   }
 
 
@@ -84,7 +84,7 @@ function App() {
       <div className="home-title">
         <div className="pokedex">
           <img src={Logo} alt="Logo" />
-          <span>Pokédex</span>
+          <span>Pokédex v1</span>
         </div>
         <button onClick={() => filtrar()} className="home-filters">
           <span>{boton}</span>
@@ -101,12 +101,12 @@ function App() {
       <div className="home-grid">
         {pokemons.length
           ? filtro?.map(({ name, url }, index) => (
-              <div className="home-pokemon-card" key={index}>
-                <Link key={url} to={`/pokemon/${url.split("/").at(-2)}`}>
-                  {<Minicard name={name} url={url} />}
-                </Link>
-              </div>
-            ))
+            <div className="home-pokemon-card" key={index}>
+              <Link key={url} to={`/pokemon/${url.split("/").at(-2)}`}>
+                {<Minicard name={name} url={url} />}
+              </Link>
+            </div>
+          ))
           : "Cargando contenido..."}
       </div>
     </div>
