@@ -11,11 +11,13 @@ function App() {
   const [boton, setBoton] = useState("a-z");
   const [busqueda, setBusqueda] = useState("");
   const [filtro, setFiltro] = useState([]);
+  let desde = 0;
+  const [hasta, setHasta] = useState(20);
 
 
   useEffect(() => {
     const getPokemons = async () => {
-      const res = await fetch("https://pokeapi.co/api/v2/pokemon/");
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${hasta}&offset=${desde}`);
       const data = await res.json();
 
       setPokemons(data.results);
@@ -23,7 +25,7 @@ function App() {
 
     getPokemons();
 
-  }, []);
+  }, [hasta]);
 
   function filtrar() {
     if (boton == "a-z") {
@@ -70,14 +72,25 @@ function App() {
 
   }
 
+  const cargarMas = () => setHasta(hasta+10); 
 
-  // POR QUE NO FUNCIONA???
 
-  // const [filter, setFilter] = useState([...pokemons]);
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop >=
+      document.documentElement.offsetHeight 
+    ) {
+      cargarMas();
+    }
+  };
 
-  // const prueba = [...pokemons];
-  // console.log("fsadfasdf", prueba);
-  // console.log("filterrrr", filter);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasta]);
 
   return (
     <div className="home-container">
@@ -109,6 +122,7 @@ function App() {
           ))
           : "Cargando contenido..."}
       </div>
+      <button className='cargar-mas' onClick={()=>cargarMas()}>Cargar mas</button>
     </div>
   );
 }
